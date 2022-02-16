@@ -45,7 +45,8 @@ const books = require("../util/data");
 
 /**
  * @swagger
- * 	/:
+ * paht:
+ * /books/:
  *    get:
  *       summary: Lists all the book.
  *       tags: [Books]
@@ -76,7 +77,8 @@ const books = require("../util/data");
 
 /**
  * @swagger
- * /{id}:
+ * path:
+ * /books/{id}:
  *   get:
  *    summary: Gets a book by id.
  *    tags: [Books]

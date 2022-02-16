@@ -12,6 +12,7 @@ app.use(
 app.use(bodyParser.json());
 
 app.use("/books", require("./routes/books"));
+app.use("/products", require("./routes/product"));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT);
@@ -36,11 +37,11 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:3000/books",
+        url: "http://localhost:3000",
       },
     ],
   },
-  apis: ["./routes/books.js"],
+  apis: ["./routes/books.js","./routes/product.js"],
 };
 
 const specs = swaggerJsdoc(options);
@@ -49,5 +50,7 @@ app.use(
   swaggerUi.serve,
   swaggerUi.setup(specs)
 );
+
+
 
 console.debug("Server listening on port: " + PORT);
